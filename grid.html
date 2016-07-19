@@ -1,0 +1,12 @@
+  <h1>AngularJS + kendo</h1>
+  <div id="mygrid" kendo-grid k-data-source="products" k-pageable='{ "refresh": true, "pageSizes": true }' k-columns='[
+                      { "field": "ProductName", "title": "Name"}, 
+                      { "field": "Supplier.SupplierName", "title": "Supplier"}, 
+                      { "field": "Category.CategoryName", "title": "Category" },
+                      { "template": "<button class=\"k-button\" ng-click=\"clickMe(#=ProductID#)\">Delete this item</button>", "title": "..." }
+                  ]' k-sortable="true" k-groupable="true" k-filterable="true">
+  </div>
+
+  <div kendo-window="modal" k-title="'Title'" k-visible="false" k-modal="true">
+    Product Id clicked: {{ productId }}
+  </div>

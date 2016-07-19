@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    console.clear()
+  </script>
+  <link href="http://cdn.kendostatic.com/2013.1.319/styles/kendo.common.min.css" rel="stylesheet" />
+  <link href="http://cdn.kendostatic.com/2013.1.319/styles/kendo.default.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
+  <script src="http://cdn.kendostatic.com/2013.1.319/js/kendo.all.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.js"></script>
+  <script src="angular.kendo.js"></script>
+  <script src="script.js"></script>
+  <script src="dataPusher.js"></script>
+  <script src="textService.js"></script>
+</head>
+
+<body ng-app="app">
+  
+  <div ng-controller='mainCtrl'>
+
+      <div class='urlBar'>http://nohost.com{{url()}}</div>
+  
+  <div class="section">
+    <h4>{{myIndex}}&deg;&nbsp;F {{updateNotification}}</h4>
+  </div>
+  
+      <div ui-view></div>
+  
+  </div>
+  
+
+</body>
+
+</html>

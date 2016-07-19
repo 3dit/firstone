@@ -1,0 +1,34 @@
+<div style='padding:10px'>
+
+    <textarea kendo-editor
+              ng-model='theText'
+              k-tools="[
+                  'bold',
+                  'italic',
+                  'undeline',
+                  {
+                    name: 'foreColor',
+                    palette: [ '#f00', '#0f0', '#00f' ]
+                  }
+              ]">
+    </textarea>
+        
+    <br/><br/>
+              
+    <div>
+      <button ng-click="showPopup()">Populate</button>
+    </div>
+              
+    <div kendo-window="textModal" k-title="'Pre Seelcted Text'" k-visible="false" k-modal="true" k-width="400">
+      <form id='theForm'>
+        <h4>Select Text Please</h4>
+        <div ng-repeat='text in texts'>
+          <input type='radio' name="texts" id="{{text.id}}" ng-model='vm.selectedText' value="{{text.id}}"/><label for="{{text.id}}">{{text.text}}</label>
+        </div>
+        <br/>
+        <input type='button' ng-click='select()' value='select'/>
+        <input type='button' ng-click='close()' value='close'/>
+      </form>
+    </div>         
+    
+</div>
