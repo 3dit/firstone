@@ -80,21 +80,21 @@ app.config(function ($stateProvider) {
   .controller('gridCtrl', function ($scope, productApi) {
     console.log('in grid controller');
 
-    productApi.getProducts().then(function (response) {
-      console.log(response.data);
-      $scope.products = new kendo.data.DataSource({
-        transport: {
-          read: "products.json"
-        },
-        dataType: "json",
-        pageSize: 3
-      });
-
-      $scope.clickMe = function (i) {
-        $scope.productId = i;
-        $scope.modal.center().open();
-      };
+    $scope.products = new kendo.data.DataSource({
+      transport: {
+        read: function (e) {
+          productApi.getProducts().then(function (response) {
+            e.success(response.data);
+          });
+        }
+      },
+      pageSize: 3
     });
+    $scope.products.read();
+    $scope.clickMe = function (i) {
+      $scope.productId = i;
+      $scope.modal.center().open();
+    };
   })
 
 //TextArea =======================================
