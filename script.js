@@ -2,7 +2,6 @@
 //uses deffered which allows 'notify' updates to the controller in addition to data push.
 //in this case, we use simple incrementing index to represent data, and setTimeout simulates
 //asyncronous polling operation such as api call
-//=========
 
 var app = angular.module('app', ['ui.router', 'kendo.directives', 'ngMessages']);
 
