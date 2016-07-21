@@ -141,3 +141,16 @@ app.config(function ($stateProvider) {
     console.log('in ngMessages controller');
   });
 
+//Numeric Textbox
+app.config(function ($stateProvider) {
+  $stateProvider.state({
+    name: 'root.numericText',
+    url: '/numericText',
+    templateUrl: 'numericText.html',
+    controller: 'numericTextCtrl',
+  })
+})
+  .controller('numericTextCtrl', function ($scope) {
+    console.log('in numericText controller');
+    $scope.numericValue = 5;
+  });
