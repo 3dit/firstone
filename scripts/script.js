@@ -3,6 +3,11 @@
 //in this case, we use simple incrementing index to represent data, and setTimeout simulates
 //asyncronous polling operation such as api call
 
+
+
+//george was here
+
+
 var app = angular.module('app', ['ui.router', 'kendo.directives', 'ngMessages']);
 
 app.controller("mainCtrl", function ($scope, dataPusher, $state, $location) {
@@ -154,3 +159,4 @@ app.config(function ($stateProvider) {
     console.log('in numericText controller');
     $scope.numericValue = 5;
   });
+
