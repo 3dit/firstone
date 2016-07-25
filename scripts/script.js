@@ -4,10 +4,6 @@
 //asyncronous polling operation such as api call
 
 
-
-//george was here
-
-
 var app = angular.module('app', ['ui.router', 'kendo.directives', 'ngMessages']);
 
 app.controller("mainCtrl", function ($scope, dataPusher, $state, $location) {
